@@ -1,0 +1,33 @@
+plugins {
+    id "java"
+    id "edu.sc.seis.macAppBundle" version "2.1.1"
+}
+
+group 'Quotes'
+version '1.0-SNAPSHOT'
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.4'
+  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'ch.qos.logback',    name: 'logback-classic',    version: '1.1.2'
+    compile group: 'org.slf4j',         name: 'slf4j-api',          version: '1.7.10'
+    compile group: 'org.xerial',        name: 'sqlite-jdbc',        version: '3.7.2'
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+macAppBundle {
+    mainClassName = "quote.Main"
+    icon = "./src/main/resources/quotes.icns"
+    bundleJRE = false
+    javaProperties.put("apple.laf.useScreenMenuBar", "true")
+}

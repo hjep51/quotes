@@ -1,0 +1,12 @@
+.root{
+    -fx-background-color: white;
+}
+
+#buttonNextQuote{
+    -fx-graphic: url("next-32x32.png");
+    -fx-background-color: transparent;
+}
+
+#buttonNextQuote:armed{
+    -fx-rotate: 90;
+}

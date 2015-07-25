@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>%date %-5level [%thread:%logger{1}] %msg%n</Pattern>
+    </layout>
+  </appender>
+
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>/var/log/Quotes/Quotes.log</file>
+    <rollingPolicy
+      class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <FileNamePattern>
+        /var/log/Quotes/Quotes.%d{yyyy-MM-dd}.log.gz
+      </FileNamePattern>
+      <MaxHistory>14</MaxHistory>
+    </rollingPolicy>
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>%date %level [%thread:%logger{1}] %msg%n</Pattern>
+    </layout>
+  </appender>
+
+
+  <appender name="SYSLOG" class="ch.qos.logback.classic.net.SyslogAppender">
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+       <level>WARN</level>
+    </filter>
+    <facility>local2</facility>
+    <suffixPattern>[java]  %level [%thread:%logger{1}] %msg</suffixPattern>
+  </appender>
+
+  <root>
+<!--
+    <level value="WARN" />
+    <appender-ref ref="FILE" />
+    <appender-ref ref="SYSLOG" />
+-->
+    <level value="DEBUG" />
+    <appender-ref ref="FILE" />
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>
