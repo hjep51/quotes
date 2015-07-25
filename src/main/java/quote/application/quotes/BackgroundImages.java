@@ -12,7 +12,7 @@ public class BackgroundImages {
     public static int getRandomInteger(int maximum, int minimum){ return ((int) (Math.random()*(maximum - minimum))) + minimum; }
 
     public String getRandomImage(){
-        int imageNo = getRandomInteger(6, 1);
+        int imageNo = getRandomInteger(18, 1);
 
         return "quotes-"+imageNo+".jpg";
     }
