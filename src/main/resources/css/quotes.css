@@ -1,4 +1,4 @@
-.root{
+#mainPane{
     -fx-background-color: white;
     -fx-background-image: url("../backgrounds/quotes-1.jpg");
 }

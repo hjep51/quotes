@@ -4,8 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import quote.application.quotes.BackgroundImages;
 import quote.application.quotes.QuoteDAO;
 import quote.application.quotes.Quotes;
 
@@ -14,6 +16,9 @@ import quote.application.quotes.Quotes;
  */
 public class MainStageController {
     public static final Logger log = LoggerFactory.getLogger(MainStageController.class);
+
+    @FXML
+    private AnchorPane mainPane;
 
     @FXML
     private Label labelCategory;
@@ -44,6 +49,10 @@ public class MainStageController {
         setLabelQuote(quote.getQuote());
         setLabelAuthor(quote.getAuthor());
         setLabelCategory(quote.getCategory());
+
+        String imgName = new BackgroundImages().getRandomImage();
+        String image = MainStageController.class.getResource("/backgrounds/"+imgName).toExternalForm();
+        mainPane.setStyle("-fx-background-image: url('" + image + "'); ");
     }
 
     public void setLabelCategory(String labelCategory){
