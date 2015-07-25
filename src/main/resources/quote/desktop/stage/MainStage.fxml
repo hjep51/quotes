@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -8,20 +9,29 @@
 <AnchorPane id="mainPane" fx:id="mainPane" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quote.desktop.controller.MainStageController">
    <children>
       <Button id="buttonNextQuote" fx:id="buttonNextQuote" layoutX="754.0" layoutY="546.0" maxHeight="32.0" maxWidth="32.0" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#loadNewQuote" prefHeight="32.0" prefWidth="32.0" />
-      <Label fx:id="labelCategory" layoutX="14.0" layoutY="14.0" prefHeight="16.0" prefWidth="240.0" text="Label">
+      <Label id="labelCategory" fx:id="labelCategory" layoutX="14.0" layoutY="14.0" prefHeight="16.0" prefWidth="240.0" text="Label" textFill="WHITE">
          <font>
             <Font name="Helvetica Light Oblique" size="13.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
-      <Label id="labelQuote" fx:id="labelQuote" alignment="CENTER" layoutX="87.0" layoutY="40.0" prefHeight="434.0" prefWidth="626.0" text="Label" textAlignment="CENTER" wrapText="true">
+      <Label id="labelQuote" fx:id="labelQuote" alignment="CENTER" layoutX="87.0" layoutY="40.0" prefHeight="434.0" prefWidth="626.0" text="Label" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Helvetica" size="45.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
-      <Label fx:id="labelAuthor" alignment="CENTER_RIGHT" layoutX="87.0" layoutY="474.0" prefHeight="39.0" prefWidth="626.0" text="Label" textAlignment="RIGHT">
+      <Label id="labelAuthor" fx:id="labelAuthor" alignment="CENTER_RIGHT" layoutX="87.0" layoutY="474.0" prefHeight="39.0" prefWidth="626.0" text="Label" textAlignment="RIGHT" textFill="WHITE">
          <font>
             <Font name="Helvetica Oblique" size="18.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
    </children>
 </AnchorPane>
