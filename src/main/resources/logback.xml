@@ -31,13 +31,13 @@
   </appender>
 
   <root>
-<!--
+
     <level value="WARN" />
-    <appender-ref ref="FILE" />
     <appender-ref ref="SYSLOG" />
--->
+<!--
     <level value="DEBUG" />
     <appender-ref ref="FILE" />
     <appender-ref ref="STDOUT" />
+-->
   </root>
 </configuration>
